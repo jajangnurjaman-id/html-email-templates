@@ -1,99 +1,521 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Email Templates</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Email Templates</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<style>
-body{
-font-family:Arial;
-background:#f5f5f5;
-padding:40px;
-}
+    :root {
+      --bg: #0b1020;
+      --panel: #121a2b;
+      --panel-2: #182235;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --primary: #111827;
+      --accent: #2563eb;
+      --soft: #f8fafc;
+    }
 
-.container{
-max-width:1000px;
-margin:auto;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0b1020 0%, #111827 38%, #f8fafc 38%, #f8fafc 100%);
+      color: var(--text);
+    }
 
-h1{
-text-align:center;
-}
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:40px;
-}
+    .hero {
+      padding: 56px 0 48px;
+      color: #fff;
+    }
 
-.card{
-background:white;
-padding:15px;
-border-radius:8px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-text-align:center;
-}
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
 
-.card img{
-width:100%;
-border-radius:6px;
-}
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
 
-.card a{
-display:inline-block;
-margin-top:10px;
-background:black;
-color:white;
-padding:8px 15px;
-text-decoration:none;
-border-radius:5px;
-}
-</style>
+    .nav a {
+      color: #dbeafe;
+      text-decoration: none;
+      font-size: 14px;
+      margin-left: 18px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: 48px;
+      line-height: 1.08;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      margin: 0 0 24px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #cbd5e1;
+      max-width: 620px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #111827;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    .hero-card-inner {
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .hero-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .hero-card-info {
+      padding: 16px;
+    }
+
+    .hero-card-info h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #111827;
+    }
+
+    .hero-card-info p {
+      margin: 0;
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .section {
+      padding: 28px 0 60px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 6px;
+      font-size: 30px;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .count {
+      font-size: 14px;
+      color: #475569;
+      background: #e2e8f0;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .thumb-wrap {
+      position: relative;
+      background: #f1f5f9;
+      padding: 14px;
+    }
+
+    .thumb {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+    }
+
+    .pill {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      background: #111827;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 7px 10px;
+      border-radius: 999px;
+    }
+
+    .card-body {
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      color: #0f172a;
+    }
+
+    .card p {
+      margin: 0 0 16px;
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 44px;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .card-actions a {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 11px 14px;
+      border-radius: 10px;
+    }
+
+    .view-btn {
+      background: #111827;
+      color: #fff;
+    }
+
+    .source-btn {
+      background: #eef2ff;
+      color: #3730a3;
+    }
+
+    .footer {
+      padding: 28px 0 50px;
+      border-top: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .footer strong {
+      color: #111827;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding-top: 34px;
+      }
+
+      .nav {
+        margin-bottom: 28px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .thumb {
+        height: 220px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="hero">
+    <div class="container">
+      <div class="nav">
+        <div class="brand">HTML Email Templates</div>
+        <div>
+          <a href="README.md">README</a>
+          <a href="https://github.com/jajangnurjaman-id/html-email-templates">GitHub</a>
+        </div>
+      </div>
 
-<div class="container">
+      <div class="hero-grid">
+        <div>
+          <h1>Clean HTML email templates with a marketplace-style gallery.</h1>
+          <p>
+            A curated collection of responsive email templates built with basic HTML and CSS.
+            Browse the gallery, preview each design, and open the source template directly.
+          </p>
 
-<h1>HTML Email Templates</h1>
-<p style="text-align:center;">Collection of responsive HTML email templates</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#templates">Browse Templates</a>
+            <a class="btn btn-secondary" href="https://github.com/jajangnurjaman-id/html-email-templates">View Repository</a>
+          </div>
 
-<div class="grid">
+          <div class="hero-meta">
+            <span class="badge">Responsive Layout</span>
+            <span class="badge">Basic HTML + CSS</span>
+            <span class="badge">Portfolio Ready</span>
+          </div>
+        </div>
 
-<div class="card">
-<img src="Welcome/preview.png">
-<h3>Welcome Email</h3>
-<a href="Welcome/index.html">View</a>
-</div>
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <img src="Welcome/preview.png" alt="Featured template preview">
+            <div class="hero-card-info">
+              <h3>Featured: Welcome Email</h3>
+              <p>Simple, polished, and easy to customize for onboarding flows, SaaS products, and startup campaigns.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="card">
-<img src="Promotional Email/preview.png">
-<h3>Promotional Email</h3>
-<a href="Promotional Email/index.html">View</a>
-</div>
+  <div class="section" id="templates">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Template Gallery</h2>
+          <p>Choose a design, preview the layout, then open the HTML source.</p>
+        </div>
+        <div class="count">8 Templates</div>
+      </div>
 
-<div class="card">
-<img src="Newsletter Email/preview.png">
-<h3>Newsletter Email</h3>
-<a href="Newsletter Email/index.html">View</a>
-</div>
+      <div class="grid">
+        <div class="card">
+          <div class="thumb-wrap">
+            <span class="pill">Welcome</span>
+            <img class="thumb" src="Welcome/preview.png" alt="Welcome Email Preview">
+          </div>
+          <div class="card-body">
+            <h3>Welcome Email</h3>
+            <p>Clean onboarding template for first-touch communication and account introductions.</p>
+            <div class="card-actions">
+              <a class="view-btn" href="Welcome/index.html">Live Preview</a>
+              <a class="source-btn" href="Welcome/">Open Folder</a>
+            </div>
+          </div>
+        </div>
 
-<div class="card">
-<img src="Product Lauch Email/preview.png">
-<h3>Product Launch Email</h3>
-<a href="Product Lauch Email/index.html">View</a>
-</div>
+        <div class="card">
+          <div class="thumb-wrap">
+            <span class="pill">Promo</span>
+            <img class="thumb" src="Promotional Email/preview.png" alt="Promotional Email Preview">
+          </div>
+          <div class="card-body">
+            <h3>Promotional Email</h3>
+            <p>Built for discounts, campaigns, seasonal offers, and product-driven announcements.</p>
+            <div class="card-actions">
+              <a class="view-btn" href="Promotional Email/index.html">Live Preview</a>
+              <a class="source-btn" href="Promotional Email/">Open Folder</a>
+            </div>
+          </div>
+        </div>
 
-<div class="card">
-<img src="Event Invitation Email/preview.png">
-<h3>Event Invitation</h3>
-<a href="Event Invitation Email/index.html">View</a>
-</div>
+        <div class="card">
+          <div class="thumb-wrap">
+            <span class="pill">Newsletter</span>
+            <img class="thumb" src="Newsletter Email/preview.png" alt="Newsletter Email Preview">
+          </div>
+          <div class="card-body">
+            <h3>Newsletter Email</h3>
+            <p>Ideal for editorial layouts, product updates, stories, and weekly content roundups.</p>
+            <div class="card-actions">
+              <a class="view-btn" href="Newsletter Email/index.html">Live Preview</a>
+              <a class="source-btn" href="Newsletter Email/">Open Folder</a>
+            </div>
+          </div>
+        </div>
 
-</div>
+        <div class="card">
+          <div class="thumb-wrap">
+            <span class="pill">Launch</span>
+            <img class="thumb" src="Product Lauch Email/preview.png" alt="Product Launch Email Preview">
+          </div>
+          <div class="card-body">
+            <h3>Product Launch Email</h3>
+            <p>Perfect for new product reveals, feature announcements, and marketing rollouts.</p>
+            <div class="card-actions">
+              <a class="view-btn" href="Product Lauch Email/index.html">Live Preview</a>
+              <a class="source-btn" href="Product Lauch Email/">Open Folder</a>
+            </div>
+          </div>
+        </div>
 
-</div>
+        <div class="card">
+          <div class="thumb-wrap">
+            <span class="pill">Event</span>
+            <img class="thumb" src="Event Invitation Email/preview.png" alt="Event Invitation Email Preview">
+          </div>
+          <div class="card-body">
+            <h3>Event Invitation Email</h3>
+            <p>Made for webinars, launches, community events, and registration-based campaigns.</p>
+            <div class="card-actions">
+              <a class="view-btn" href="Event Invitation Email/index.html">Live Preview</a>
+              <a class="source-btn" href="Event Invitation Email/">Open Folder</a>
+            </div>
+          </div>
+        </div>
 
+        <div class="card">
+          <div class="thumb-wrap">
+            <span class="pill">System</span>
+            <img class="thumb" src="Transactional Email/preview.png" alt="Transactional Email Preview">
+          </div>
+          <div class="card-body">
+            <h3>Transactional Email</h3>
+            <p>Useful for account activity, confirmations, notifications, and service updates.</p>
+            <div class="card-actions">
+              <a class="view-btn" href="Transactional Email/index.html">Live Preview</a>
+              <a class="source-btn" href="Transactional Email/">Open Folder</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="thumb-wrap">
+            <span class="pill">Feedback</span>
+            <img class="thumb" src="Feedback Email/preview.png" alt="Feedback Email Preview">
+          </div>
+          <div class="card-body">
+            <h3>Feedback Email</h3>
+            <p>Designed for surveys, customer satisfaction requests, and product review flows.</p>
+            <div class="card-actions">
+              <a class="view-btn" href="Feedback Email/index.html">Live Preview</a>
+              <a class="source-btn" href="Feedback Email/">Open Folder</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="thumb-wrap">
+            <span class="pill">Re-engage</span>
+            <img class="thumb" src="Re-engagement Email/preview.png" alt="Re-engagement Email Preview">
+          </div>
+          <div class="card-body">
+            <h3>Re-engagement Email</h3>
+            <p>Bring inactive users back with a focused layout built for retention campaigns.</p>
+            <div class="card-actions">
+              <a class="view-btn" href="Re-engagement Email/index.html">Live Preview</a>
+              <a class="source-btn" href="Re-engagement Email/">Open Folder</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container footer-inner">
+      <div>Template collection by <strong>Jajang Nurjaman</strong></div>
+      <div>Built with basic HTML and CSS</div>
+    </div>
+  </div>
 </body>
 </html>
