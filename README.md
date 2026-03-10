@@ -1,19 +1,38 @@
 # HTML Email Templates
 
+![GitHub stars](https://img.shields.io/github/stars/jajangnurjaman-id/html-email-templates)
+![GitHub forks](https://img.shields.io/github/forks/jajangnurjaman-id/html-email-templates)
+![GitHub license](https://img.shields.io/github/license/jajangnurjaman-id/html-email-templates)
+
 A collection of responsive HTML email templates built with basic HTML and CSS.
 
-## Templates
+---
 
-| Template | Preview |
-|--------|--------|
-| Welcome Email | ![](Welcome/preview.png) |
-| Promotional Email | ![](Promotional Email/preview.png) |
-| Newsletter Email | ![](Newsletter Email/preview.png) |
-| Product Launch Email | ![](Product Lauch Email/preview.png) |
-| Event Invitation Email | ![](Event Invitation Email/preview.png) |
-| Transactional Email | ![](Transactional Email/preview.png) |
-| Feedback Email | ![](Feedback Email/preview.png) |
-| Re-engagement Email | ![](Re-engagement Email/preview.png) |
+## Template Gallery
+
+### Welcome Email
+![Preview](Welcome/preview.png)
+
+### Promotional Email
+![Preview](Promotional Email/preview.png)
+
+### Newsletter Email
+![Preview](Newsletter Email/preview.png)
+
+### Product Launch Email
+![Preview](Product Lauch Email/preview.png)
+
+### Event Invitation Email
+![Preview](Event Invitation Email/preview.png)
+
+### Transactional Email
+![Preview](Transactional Email/preview.png)
+
+### Feedback Email
+![Preview](Feedback Email/preview.png)
+
+### Re-engagement Email
+![Preview](Re-engagement Email/preview.png)
 
 ---
 
