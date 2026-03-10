@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Platform</title>
+    <style>
+        /* Reset gaya dasar untuk klien email */
+        body, table, td, a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+        /* CSS Utama */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f3f3f3; /* Background luar abu muda */
+        }
+        .wrapper {
+            width: 100%;
+            background-color: #f3f3f3;
+            padding: 40px 0;
+        }
+        .main-container {
+            max-width: 600px; /* Max width 600px */
+            margin: 0 auto;
+            background-color: #ffffff; /* Container putih */
+            border-radius: 8px; /* Border radius lembut */
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #333333;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        /* Style untuk kotak abu-abu pengganti gambar */
+        .hero-placeholder {
+            width: 100%;
+            height: 250px;
+            background-color: #e0e0e0;
+            text-align: center;
+            line-height: 250px;
+            color: #888888;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .content {
+            padding: 40px 30px;
+            text-align: center; /* Layout center */
+        }
+        h1 {
+            color: #222222;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        p {
+            color: #555555;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: #0066ff; /* Warna biru SaaS professional */
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+        /* Style untuk Feature Cards menggunakan tabel agar aman di email */
+        .features-table {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        .feature-item {
+            padding: 15px;
+            text-align: center;
+        }
+        /* Style untuk ikon abu-abu pengganti gambar */
+        .icon-placeholder {
+            width: 48px;
+            height: 48px;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            margin: 0 auto 12px auto;
+            text-align: center;
+            line-height: 48px;
+            color: #888888;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .feature-title {
+            font-size: 16px;
+            color: #222222;
+            font-weight: bold;
+            margin-bottom: 8px;
+            margin-top: 0;
+        }
+        .feature-desc {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+        .btn-secondary {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #ffffff;
+            color: #0066ff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 15px;
+            border: 2px solid #0066ff;
+        }
+        .footer {
+            background-color: #fafafa;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid #eeeeee;
+        }
+        .footer p {
+            font-size: 13px;
+            color: #888888;
+            margin-bottom: 10px;
+        }
+        .footer a {
+            color: #0066ff;
+            text-decoration: underline;
+        }
+        .credits {
+            margin-top: 20px;
+            font-size: 12px !important;
+            color: #aaaaaa !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Main Email Container -->
+        <table class="main-container" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+            <!-- 1. Header -->
+            <tr>
+                <td class="header">
+                    <a href="#" class="logo">Your Logo</a>
+                </td>
+            </tr>
+
+            <!-- 2. Hero Section -->
+            <tr>
+                <td>
+                    <div class="hero-placeholder">Hero Image Area</div>
+                </td>
+            </tr>
+
+            <!-- Content Area -->
+            <tr>
+                <td class="content">
+                    
+                    <!-- 3. Headline -->
+                    <h1>Welcome to Our Platform!</h1>
+                    
+                    <!-- 4. Deskripsi -->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    
+                    <!-- 5. CTA Button Utama -->
+                    <a href="#" class="btn">Get Started</a>
+
+                    <!-- 6. Section Fitur (Menggunakan tabel agar layout rapi di email client) -->
+                    <table class="features-table" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <!-- Feature 1 -->
+                            <td width="33.33%" class="feature-item" valign="top">
+                                <div class="icon-placeholder">1</div>
+                                <h3 class="feature-title">Feature One</h3>
+                                <p class="feature-desc">Lorem ipsum dolor sit amet, elit sed do eiusmod.</p>
+                            </td>
+                            <!-- Feature 2 -->
+                            <td width="33.33%" class="feature-item" valign="top">
+                                <div class="icon-placeholder">2</div>
+                                <h3 class="feature-title">Feature Two</h3>
+                                <p class="feature-desc">Lorem ipsum dolor sit amet, elit sed do eiusmod.</p>
+                            </td>
+                            <!-- Feature 3 -->
+                            <td width="33.33%" class="feature-item" valign="top">
+                                <div class="icon-placeholder">3</div>
+                                <h3 class="feature-title">Feature Three</h3>
+                                <p class="feature-desc">Lorem ipsum dolor sit amet, elit sed do eiusmod.</p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- 7. CTA Kedua -->
+                    <a href="#" class="btn-secondary">Explore Platform</a>
+
+                </td>
+            </tr>
+
+            <!-- 8. Footer -->
+            <tr>
+                <td class="footer">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.</p>
+                    <p>Don't want to receive these emails? <a href="#">Unsubscribe</a></p>
+                    
+                    <p class="credits">
+                        Template by Your Name<br>
+                        GitHub: <a href="https://github.com/jajangnurjaman-id" style="color: #aaaaaa;">github.com/jajangnurjaman-id</a>
+                    </p>
+                </td>
+            </tr>
+
+        </table>
+        <!-- End Main Email Container -->
+    </div>
+
+</body>
+</html>
